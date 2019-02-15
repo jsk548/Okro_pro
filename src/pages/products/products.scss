@@ -1,0 +1,17 @@
+page-products {
+  ion-header {
+    height: 50px;
+    background: #0465b2;
+    ion-select {
+      padding-left: 20px!important;
+      max-width: 100%!important;
+      .select-icon-inner {
+          color: #0465b2;
+      }
+      .select-text {
+          text-align: left;
+          padding-right: 5px;
+      }
+  }
+  }
+}
