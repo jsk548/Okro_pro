@@ -14,7 +14,10 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+      scrollAssist: true,
+      scrollPadding: false
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

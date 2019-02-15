@@ -1,14 +1,23 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content no-padding>
+  <div class="content">
+        <div class="header-section">
+            <img src="assets/imgs/preferences-system-power.png" class="home-logo"/>
+            <div class="home-title">Loading Screen</div>
+        </div>
+        <div class="body-section">
+            <ion-item no-lines>
+            <ion-input class="border-box" placeholder="First Name"></ion-input>
+            </ion-item>
+            <ion-item no-lines>
+              <ion-input class="border-box" placeholder="Last Name"></ion-input>
+            </ion-item>
+            <ion-item no-lines>
+              <ion-input class="border-box" placeholder="Mobile Number"></ion-input>
+            </ion-item>
+        </div>
+            <button class="button-div border-box" (click)="continueToNext()">
+                Open Next Screen
+            </button>
+    </div>
 </ion-content>

@@ -1,3 +1,62 @@
 page-home {
-
+  .content {
+      background-color:white;
+      ion-item {
+          margin-bottom: 6px !important;
+          padding: 0 !important;
+        .item-inner {
+          padding: 0 !important;
+          border: none !important;
+          box-shadow: none !important;
+          ion-input {
+            //border: none !important;
+            background: none !important;
+          }
+          .input-ios {
+            padding-left: 6px;
+          }
+        }
+      }
+      .border-box {
+          border: 2px solid #0465b2;
+          border-radius: 16px;
+      }
+      .home-logo {
+          display: block;
+          margin-top: 50px !important;
+          margin: auto;
+          width: 120px;
+          height: 120px;
+          justify-content: center;
+          align-items: center;
+      }
+      .home-title {
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+          display: flex;
+          margin-top: 10px;
+          font-size: 24px;
+          font-weight: bold;
+          color: #0465b2;
+      }
+      .body-section {
+          display: block;
+          width: 76%;
+          margin: auto;
+          margin-top: 38px;
+      }
+      .button-div {
+          display: block;
+          width: 76%;
+          margin: auto;
+          margin-top: 38px;
+          height: 52px;
+          background-color: #0465b2;
+          color: white;
+          font-size: 24px;
+          text-align: center;
+          text-decoration: none;
+      }
+  }
 }
