@@ -2,27 +2,27 @@ page-products {
   ion-header {
     ion-navbar {
         .toolbar-background {
-            background: #0465b2 !important; 
+            background: #0465b2 !important;
         }
-        .category-div {
-            display: flex;
-            justify-content: center;
-            ion-select {
-                padding-left: 20px!important;
-                max-width: none !important;
-                .select-icon-inner {
-                    color: #0465b2;
-                }
-                .select-text {
-                    color: white;
-                    text-align: left;
-                    padding-right: 5px;
-                }
-            }
-        } 
+        .toolbar-content {
+            .category-div {
+                display: flex !important;
+                justify-content: center !important;
+                padding-right: 50px !important;
+                ion-select {
+                    .select-icon-inner {
+                        color: white;
+                    }
+                    .select-text, .select-placeholder {
+                        color: white !important;
+                        text-align: center !important;
+                    }
+                } 
+            }  
+        }
     }
   }
-  ion-content {
+  ion-content {  
       ion-list {
           display: flex;
           justify-content: space-between;
@@ -88,6 +88,14 @@ page-products {
             background-color: #0465b2;
         }
     }
+}
+
+.back-button {
+    color: white !important;
+}
+
+.scroll-content {
+    padding-top: 12px !important;
 }
 
 ion-popover.select-popover.popover-md {

@@ -9,7 +9,6 @@ page-home {
           border: none !important;
           box-shadow: none !important;
           ion-input {
-            //border: none !important;
             background: none !important;
           }
           .input-ios {
@@ -59,4 +58,29 @@ page-home {
           text-decoration: none;
       }
   }
+}
+
+ion-alert.alert-top {
+    padding-top: 160px !important;
+    .alert-title {
+        text-align: center;
+        color: #0465b2;
+    }
+    .alert-input, .alert-input:focus {
+        border: 1px solid #0465b2 !important;
+        border-radius: 16px !important;
+        padding: 12px 18px !important;
+    } 
+    .alert-button-group {
+        justify-content: center !important;
+        .alert-button {
+            width: 120px !important;
+            background-color:  #0465b2;
+            color: white;
+            border-radius: 16px !important;
+            .button-inner {
+                justify-content: center !important;
+            }
+        }
+    }
 }
