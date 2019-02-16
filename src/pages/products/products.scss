@@ -1,21 +1,25 @@
 page-products {
   ion-header {
-    height: 50px;
-    background: #0465b2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    ion-select {
-      padding-left: 20px!important;
-      max-width: none !important;
-      .select-icon-inner {
-          color: #0465b2;
-      }
-      .select-text {
-          color: white;
-          text-align: left;
-          padding-right: 5px;
-      }
+    ion-navbar {
+        .toolbar-background {
+            background: #0465b2 !important; 
+        }
+        .category-div {
+            display: flex;
+            justify-content: center;
+            ion-select {
+                padding-left: 20px!important;
+                max-width: none !important;
+                .select-icon-inner {
+                    color: #0465b2;
+                }
+                .select-text {
+                    color: white;
+                    text-align: left;
+                    padding-right: 5px;
+                }
+            }
+        } 
     }
   }
   ion-content {
@@ -69,7 +73,21 @@ page-products {
             }
         }
       }
-  }
+    }
+    ion-footer {
+        left: 5px !important;
+        bottom: 5px !important;
+        .footer-bar {
+            display: block;
+            width: 97%;
+            height: 46px;
+            font-size: 18px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            background-color: #0465b2;
+        }
+    }
 }
 
 ion-popover.select-popover.popover-md {

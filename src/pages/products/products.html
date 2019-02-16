@@ -1,4 +1,5 @@
 <ion-header>
+    <ion-navbar>
     <div class="category-div">
     <ion-select [(ngModel)]="productsType" interface="popover" placeholder="Select Category" (ionChange)="onChangeProductsType()">
         <ion-option value="ProductType.Category1">Category1</ion-option>
@@ -7,24 +8,29 @@
         <ion-option value="ProductType.Category4">Category4</ion-option>
     </ion-select>
 </div>
+</ion-navbar>
 </ion-header>
 
 <ion-content no-padding>
-    <ion-list no-lines>
+    <ion-list *ngFor="let product of productsList" no-lines>
         <div>
-            <img src="assets/imgs/preferences-system-power.png" class="product-img"/>
+            <img src="assets/imgs/{{ product.name + '.png'}}" class="product-img"/>
             <ion-item class="info-div">
-                <ion-label class="product-info">Water</ion-label>
+                <ion-label class="product-info">{{product.name}}</ion-label>
             </ion-item>
             <ion-item class="price info-div">
-                <ion-label class="product-info">1 lt | $2</ion-label>
+                <ion-label class="product-info">{{product.unit}} | {{product.price}}</ion-label>
             </ion-item>
             <div class="product-count">
                 <span class="operator"><img src="assets/imgs/remove.svg" class=""/></span>
-                <span class="count">5</span>
+                <span class="count">{{product.quantity}}</span>
                 <span class="operator"><img src="assets/imgs/add.svg" class=""/></span>
             </div>
         </div>
     </ion-list>
 </ion-content>
-<ion-footer></ion-footer>
+<ion-footer>
+    <button class="footer-bar" (click)="applyChanges()" >
+        <div class="button-text">Back to Login</div>
+    </button>
+</ion-footer>
