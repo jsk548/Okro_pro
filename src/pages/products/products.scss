@@ -2,16 +2,39 @@ page-products {
   ion-header {
     height: 50px;
     background: #0465b2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     ion-select {
       padding-left: 20px!important;
-      max-width: 100%!important;
+      max-width: none !important;
       .select-icon-inner {
           color: #0465b2;
       }
       .select-text {
+          color: white;
           text-align: left;
           padding-right: 5px;
       }
   }
   }
+}
+
+ion-popover.select-popover.popover-md {
+    .popover-content {
+        border-radius: 0px!important;
+        left: 90px !important;
+        width: 160px !important;
+    }
+    .item-radio-checked.item-md ion-label {
+        color: #0465b2;
+    }
+    .radio-md {
+        .radio-checked {
+            border-color:#0465b2;
+        }
+        .radio-inner{
+            background-color:#0465b2;
+        }
+    }
 }

@@ -10,9 +10,8 @@ export class ProductsPage {
 
   private productsType: ProductType;
   constructor(public navCtrl: NavController) {
-
   }
-
+  
   onChangeProductsType() {
     console.log("category changed", this.productsType);
   }
