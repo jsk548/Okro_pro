@@ -1,25 +1,25 @@
 <ion-header>
 </ion-header>
 <ion-content no-padding>
-  <div class="content">
+    <div class="content">
         <div class="header-section">
-            <img src="assets/imgs/preferences-system-power.png" class="home-logo"/>
+            <img src="assets/imgs/preferences-system-power.png" class="home-logo" />
             <div class="home-title">Loading Screen</div>
         </div>
         <div class="body-section">
             <ion-item no-lines>
-            <ion-input class="border-box" placeholder="First Name"></ion-input>
+                <ion-input class="border-box" [(ngModel)]="firstName" placeholder="First Name"></ion-input>
             </ion-item>
             <ion-item no-lines>
-              <ion-input class="border-box" placeholder="Last Name"></ion-input>
+                <ion-input class="border-box" [(ngModel)]="lastName" placeholder="Last Name"></ion-input>
             </ion-item>
             <ion-item no-lines>
-              <ion-input class="border-box" placeholder="Mobile Number"></ion-input>
+                <ion-input class="border-box" [(ngModel)]="mobileNumber" placeholder="Mobile Number"></ion-input>
             </ion-item>
         </div>
-            <button class="button-div border-box" (click)="continueToNext()">
-                Open Basket
-            </button>
+        <button class="button-div border-box" (click)="continueToNext()">
+            Open Basket
+        </button>
     </div>
 </ion-content>
 <ion-footer>

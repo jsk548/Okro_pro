@@ -1,6 +1,6 @@
 page-home {
   .content {
-      background-color:white;
+      background-color: $okro-white;
       ion-item {
           margin-bottom: 6px !important;
           padding: 0 !important;
@@ -17,7 +17,7 @@ page-home {
         }
       }
       .border-box {
-          border: 2px solid #0465b2;
+          border: 2px solid $okro-color;
           border-radius: 16px;
       }
       .home-logo {
@@ -37,7 +37,7 @@ page-home {
           margin-top: 10px;
           font-size: 24px;
           font-weight: bold;
-          color: #0465b2;
+          color: $okro-color;
       }
       .body-section {
           display: block;
@@ -51,8 +51,8 @@ page-home {
           margin: auto;
           margin-top: 38px;
           height: 52px;
-          background-color: #0465b2;
-          color: white;
+          background-color: $okro-color;
+          color: $okro-white;
           font-size: 24px;
           text-align: center;
           text-decoration: none;

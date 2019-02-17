@@ -1,22 +1,22 @@
 <ion-header>
     <ion-navbar>
         <ion-toolbar>
-                <div class="category-div">
-                        <ion-select [(ngModel)]="productsType" interface="popover" placeholder="Select Category" (ionChange)="onChangeProductsType()">
-                            <ion-option value="ProductType.Category1">Category1</ion-option>
-                            <ion-option value="ProductType.Category2">Category2</ion-option>
-                            <ion-option value="ProductType.Category3">Category3</ion-option>
-                            <ion-option value="ProductType.Category4">Category4</ion-option>
-                        </ion-select>
-                    </div>
+            <div class="category-div">
+                <ion-select [(ngModel)]="productsType" interface="popover" placeholder="Select Category" (ionChange)="onChangeProductsType()">
+                    <ion-option value="0">Category1</ion-option>
+                    <ion-option value="1">Category2</ion-option>
+                    <ion-option value="2">Category3</ion-option>
+                    <ion-option value="3">Category4</ion-option>
+                </ion-select>
+            </div>
         </ion-toolbar>
-</ion-navbar>
+    </ion-navbar>
 </ion-header>
 
 <ion-content no-padding>
     <ion-list *ngFor="let product of productsList" no-lines>
         <div>
-            <img src="assets/imgs/{{ product.name + '.png'}}" class="product-img"/>
+            <img src="assets/imgs/{{ product.name + '.png'}}" class="product-img" />
             <ion-item class="info-div">
                 <ion-label class="product-info">{{product.name}}</ion-label>
             </ion-item>
@@ -24,15 +24,19 @@
                 <ion-label class="product-info">{{product.unit}} | {{product.price}}</ion-label>
             </ion-item>
             <div class="product-count">
-                <span class="operator" (click)="remove(product)"><img src="assets/imgs/remove.svg"/></span>
+                <span class="operator" (click)="remove(product)">
+                    <img src="assets/imgs/remove.svg" />
+                </span>
                 <span class="count">{{product.quantity}}</span>
-                <span class="operator" (click)="add(product)"><img src="assets/imgs/add.svg"/></span>
+                <span class="operator" (click)="add(product)">
+                    <img src="assets/imgs/add.svg" />
+                </span>
             </div>
         </div>
     </ion-list>
 </ion-content>
 <ion-footer>
-    <button class="footer-bar" (click)="applyChanges()" >
+    <button class="footer-bar" (click)="applyChanges()">
         <div class="button-text">Confirm Basket</div>
     </button>
 </ion-footer>

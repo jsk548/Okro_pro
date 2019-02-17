@@ -2,7 +2,7 @@ page-products {
   ion-header {
     ion-navbar {
         .toolbar-background {
-            background: #0465b2 !important;
+            background: $okro-color !important;
         }
         .toolbar-content {
             .category-div {
@@ -11,10 +11,10 @@ page-products {
                 padding-right: 50px !important;
                 ion-select {
                     .select-icon-inner {
-                        color: white;
+                        color: $okro-white;
                     }
                     .select-text, .select-placeholder {
-                        color: white !important;
+                        color: $okro-white !important;
                         text-align: center !important;
                     }
                 } 
@@ -39,14 +39,14 @@ page-products {
             height: 28px !important;
             .product-info {
                 font-size: 14px;
-                color: #0465b2;
+                color: $okro-color;
                 text-align: center;
             }
         }
         .price {
             width: 160px !important;
             margin-left: 72px !important;
-            border: 1px solid #0465b2 !important;
+            border: 1px solid $okro-color !important;
             border-radius: 8px !important;  
         }
         .info-div {
@@ -59,8 +59,8 @@ page-products {
             justify-content: space-between;
             margin-top: 6px;
             border-radius: 8px !important;  
-            background-color: #d5d5d5;
-            color: #0465b2;
+            background-color: $okro-light-grey;
+            color: $okro-color;
             font-weight: bold;
             .operator {
                 width: 150px;
@@ -83,15 +83,15 @@ page-products {
             height: 46px;
             font-size: 18px;
             border-radius: 8px;
-            color: white;
+            color: $okro-white;
             font-weight: bold;
-            background-color: #0465b2;
+            background-color: $okro-color;
         }
     }
 }
 
 .back-button {
-    color: white !important;
+    color: $okro-white !important;
 }
 
 .scroll-content {
@@ -105,14 +105,14 @@ ion-popover.select-popover.popover-md {
         width: 160px !important;
     }
     .item-radio-checked.item-md ion-label {
-        color: #0465b2;
+        color: $okro-color;
     }
     .radio-md {
         .radio-checked {
-            border-color:#0465b2;
+            border-color: $okro-color;
         }
         .radio-inner{
-            background-color:#0465b2;
+            background-color: $okro-color;
         }
     }
 }

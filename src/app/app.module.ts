@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ProductsPage } from '../pages/products/products';
+import { AwsOTPUtils } from '../providers/aws-otp-utils';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ProductsPage } from '../pages/products/products';
   ],
   providers: [
     StatusBar,
+    AwsOTPUtils,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
