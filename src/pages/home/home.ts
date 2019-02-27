@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { ProductsPage } from '../products/products';
 import { AwsOTPUtils } from '../../providers/aws-otp-utils';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'page-home',
@@ -12,42 +13,41 @@ export class HomePage {
   private firstName: string;
   private lastName: string;
   private mobileNumber: string;
-  private fireEvent: boolean = true;
   constructor(public navCtrl: NavController, private alertController: AlertController, private awsUtils: AwsOTPUtils) {
 
   }
 
-  continueToNext() {
-    setTimeout(() => {
-      this.fireEvent = true;
-    }, 60000);
-    if (this.lastName && this.firstName && this.mobileNumber && this.mobileNumber.length >= 10 && this.fireEvent) {
-      if (!this.mobileNumber.startsWith("+91")) {
-        let phone = this.mobileNumber;
-        this.mobileNumber = "+91" + phone;
-      }
-      this.fireEvent = false;
-      this.awsUtils.createSubscription(this.mobileNumber).then(() => {
-        this.awsUtils.publishSubscription().then((otp) => {
-          this.showAlertWithPrompt("Verify Mobile", "otp", "Enter OTP").then((data) => {
-            if (data && data["otp"]) {
-              this.awsUtils.deleteSubscription();
-              if (data["otp"] == otp) {
-                this.navCtrl.push(ProductsPage);
+  confirmButtonListener() {
+    let confirmButton = document.getElementById('confirm-button');
+    Observable.fromEvent(confirmButton,  "click").throttleTime(60000).subscribe(()=>{
+      if (this.lastName && this.firstName && this.mobileNumber && this.mobileNumber.length >= 10) {
+        if (!this.mobileNumber.startsWith("+91")) {
+          let phone = this.mobileNumber;
+          this.mobileNumber = "+91" + phone;
+        }
+        this.awsUtils.createSubscription(this.mobileNumber).then(() => {
+          this.awsUtils.publishSubscription().then((otp) => {
+            this.showAlertWithPrompt("Verify Mobile", "otp", "Enter OTP").then((data) => {
+              if (data && data["otp"]) {
+                this.awsUtils.deleteSubscription();
+                if (data["otp"] == otp) {
+                  this.navCtrl.push(ProductsPage);
+                }
               }
-            }
-          }, error => {
-            this.awsUtils.deleteSubscription();
+            }, error => {
+              this.awsUtils.deleteSubscription();
+            });
           });
         });
-      });
-    }
+      }
+    });
   }
 
   ionViewDidEnter() {
     this.awsUtils.initAWSWithCrdedentials().then(() => {
       this.awsUtils.getTopics().then((data) => {
         console.log("reached data", data);
+        this.confirmButtonListener();
       }, err => {
         console.log("error", err);
       });
@@ -82,7 +82,6 @@ export class HomePage {
     this.lastName = null;
     this.firstName = null;
     this.mobileNumber = null;
-    this.fireEvent = true;
   }
 
 }
